@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MXN Counter</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=League+Spartan:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-image: url("https://wallpapercave.com/wp/wp8066706.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: white;
+        }
+
+        .hero {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,1),
+                rgba(0,0,0,0)
+            );
+            pointer-events: none;
+        }
+
+        #money {
+            font-family: 'BBH Bartle', sans-serif;
+            font-size: 72px;
+            z-index: 1;
+            text-shadow: 0 0 20px rgba(0,0,0,0.9);
+        }
+
+        .info {
+            background-color: rgb(0,0,0);
+            padding: 80px 15%;
+            font-family: 'League Spartan', sans-serif;
+        }
+
+        .info h1 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .info p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div id="money">0 MXN</div>
+    </div>
+
+    <section class="info">
+        <h1>Ayúdanos a financiar la serie</h1>
+
+        <p>Actualmente estamos trabajando en una serie independiente que se desarrolla por capítulos, y nos encontramos en una etapa crítica del proyecto. El objetivo principal de esta recaudación es poder financiar el Capítulo 3, el cual requiere recursos técnicos, humanos y creativos que en este momento no podemos cubrir de manera autónoma.</p>
+
+        <p>El proyecto es dirigido y liderado por su CEO y director creativo, quien actualmente es menor de edad. Esta situación ha generado múltiples limitaciones legales y administrativas, ya que no puede firmar contratos laborales formales ni establecer acuerdos de trabajo tradicionales con las personas que colaboran en la producción.</p>
+
+        <p>Debido a estas restricciones, se vuelve extremadamente complejo poder pagar de manera justa y constante al equipo que participa en la serie. Muchas de las personas involucradas están aportando su tiempo, talento y esfuerzo de forma voluntaria, lo cual no es sostenible a largo plazo sin apoyo externo.</p>
+
+        <p>La financiación permitiría cubrir gastos esenciales como diseño, animación, sonido, edición, herramientas digitales y compensación básica para los colaboradores. Esto no solo mejora la calidad del contenido, sino que también garantiza que el proyecto pueda continuar sin interrupciones ni retrasos innecesarios.</p>
+
+        <p>Es importante mencionar que cualquier donación cuenta. Incluso aportaciones pequeñas, como 40 pesos mexicanos, ayudan directamente a financiar el Capítulo 2 y a mantener el proyecto activo mientras se reúnen los recursos necesarios para el siguiente episodio.</p>
+
+        <p>Las donaciones no están pensadas como una obligación, sino como una forma de apoyo a un proyecto creativo independiente que busca salir adelante a pesar de las dificultades legales y económicas. Cada contribución representa un voto de confianza en el trabajo que estamos construyendo.</p>
+
+        <p>Este apoyo también permite planificar mejor el futuro de la serie, establecer tiempos más realistas de producción y reducir la carga económica sobre una sola persona. Con los recursos adecuados, el equipo puede enfocarse plenamente en crear una historia de calidad.</p>
+
+        <p>Si decides apoyar, estarás contribuyendo directamente a que la serie continúe, a que el Capítulo 3 sea una realidad y a que un proyecto liderado por talento joven pueda superar las barreras que hoy lo limitan. Tu ayuda, sin importar el monto, tiene un impacto real.</p>
+    </section>
+
+    <script>
+        let current = 0;
+        const target = 882;
+        const speed = 35;
+
+        const interval = setInterval(() => {
+            current += speed;
+
+            if (current >= target) {
+                current = target;
+                clearInterval(interval);
+            }
+
+            document.getElementById("money").innerText =
+                current.toLocaleString("es-MX") + " MXN";
+        }, 30);
+    </script>
+
+</body>
+</html>
